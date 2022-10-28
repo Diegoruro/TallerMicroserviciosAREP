@@ -10,7 +10,19 @@ public class SparkWebApp {
             String response=null;
             System.out.println("posteando");
             System.out.println(req.body());
-            return response;});
+            return response;
+        });
+
+        //User
+        path("", () -> {
+            post("/auth", (req, res) -> {
+                //verify if user exist
+                String SERVER_KEY = "password";
+                res.body("hi");
+                return "ok";
+            });
+        });
+
     }
 
     private static int getPort() {
