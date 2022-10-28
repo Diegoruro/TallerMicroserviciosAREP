@@ -1,0 +1,11 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    box-shadow: 0 0 5px white;
+    align-items: center;
+    width: 100%;
+}
+h1 {
+    margin: 0;
+}
