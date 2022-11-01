@@ -1,11 +1,48 @@
+:root{
+    --main: rgb(0, 0, 0);
+    --secondary: white;
+    --blue: rgb(28, 155, 240);
+    --dark-blue: rgb(6, 146, 240);
+    --third: rgb(85, 85, 85);
+    --light-main: rgb(65, 65, 65);
+    --light-background: rgb(32, 35, 39);
+}
 html {
-    height: 100vh;
+    height: 95vh;
     min-height: 100%;
     font-family: 'Poppins', sans-serif;
 }
-
 body {
-    background-color: rgb(160, 252, 255);
+    background-color: var(--main);
     height: 100%;
+    width: 100%;
     margin: 0;
+}
+.main-button{
+    align-self: center;
+    cursor: pointer;
+    color: var(--secondary);
+    background-color: var(--blue);
+    border-radius: 20px;
+    padding: 5px;
+    width: 100px;
+    border-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+.secondary-button{
+    align-self: center;
+    cursor: pointer;
+    color:  var(--light-background);
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 5px;
+    width: 100px;
+    border-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+.main-button:hover{
+    background-color: var(--dark-blue);
+}
+.secondary-button:hover{
+    background-color: rgb(230, 230, 230);
 }

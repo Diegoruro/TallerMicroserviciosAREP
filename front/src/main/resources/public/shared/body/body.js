@@ -23,13 +23,6 @@ class custom_body extends HTMLElement{
         }
     }
 
-    async connectedCallback(){
-        console.log('loading');
-        console.log(this.currentview);
-        const html = await loadHTML(this.currentview, import.meta.url);
-        this.innerHTML = html;
-    }
-
     async updateView(value){
         if(value == 'home') {
             this.currentview = "./home/home.html";
@@ -37,7 +30,9 @@ class custom_body extends HTMLElement{
             this.innerHTML = html;
         }
         else if (value == 'login') {
-            this.currentview = "./login/login.html";
+            this.currentview = "./login/login.html";            
+            const html = await loadHTML(this.currentview, import.meta.url);
+            this.innerHTML = html;
         }
     }
 }

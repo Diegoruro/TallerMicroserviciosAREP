@@ -1,9 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./shared/body/home/style-home.css">
 </head>
 <body>
-    <div>Hi!</div>
+    <div class="body-grid">
+        <nav>
+            <label class="selected">
+                <i class="material-icons" style="font-size:24px;">home</i>
+                Inicio
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">tag</i>
+                Explorar
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">notifications</i>
+                Notificaciónes
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">mail</i>
+                Mensajes
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">bookmark</i>
+                Guardados
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">sort</i>
+                Listas
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">account_circle</i>
+                Perfil
+            </label>
+            <label>
+                <i class="material-icons" style="font-size:24px;">settings</i>
+                Más opeciones
+            </label>
+            <button class="main-button tweet">Twittear</button>
+        </nav>
+        <main>Hi</main>
+        <aside>
+            <div class="search">
+                <i class="material-icons" style="font-size:24px;">search</i>
+                <input class="search-input" type="text" placeholder="Busca en Twitter">
+            </div>
+            <div class="side-card">
+                <h3>Qué está pasando</h3>
+                <div class="trends-items">
+                    <div class="item">
+                        <p class="sub-info">Fútbol · Anoche</p>
+                        <p class="title">España derrota a Colombia y consigue el bicampeonato del Mundial Sub-17 Femenino</p>
+                        <p class="sub-info">Tendencias sobre #MujeresALaCancha</p>
+                    </div>
+                    <div class="item">
+                        <p class="sub-info">Música · Tendencias</p>
+                        <p class="title">Takeoff</p>
+                        <p class="sub-info">1,46M Tweets</p>
+                    </div>
+                    <div class="item">
+                        <p class="sub-info">Guerra en Ucrania · EN DIRECTO</p>
+                        <p class="title">Lo último sobre la guerra en Ucrania</p>
+                    </div>
+                    <div class="item">
+                        <p class="sub-info">Noticias Mundiales · Anoche</p>
+                        <p class="title">Lula da Silva es el nuevo presidente electo de Brasil</p>
+                        <p class="sub-info">Tendencias sobre Brazil, Lula</p>
+                    </div>
+                </div>
+                <div class="more-items">
+                    Mostrar más
+                </div>
+            </div>
+            <div class="side-card">
+                <h3>A quién seguir</h3>
+                <div class="accounts-items">
+                    <div class="item account">
+                        <div class="left-container">
+                            <img width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037080711603167322/unknown.png" alt="alt">
+                            <div class="account-text">
+                                <p class="name">Kevin De Bruyne <i class="material-icons" style="font-size:15px;">check_circle</i></p>
+                                <p class="nick-name">@KevinDeBruyne</p>
+                            </div>
+                        </div>
+                        <button class="secondary-button">Seguir</button>
+                    </div>
+                    <div class="item account">
+                        <div class="left-container">
+                            <img width="50px" height="50px" src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg" alt="alt">
+                            <div class="account-text">
+                                <p class="name">NASA <i class="material-icons" style="font-size:15px;">check_circle</i></p>
+                                <p class="nick-name">@NASA</p>
+                            </div>
+                        </div>
+                        <button class="secondary-button">Seguir</button>
+                    </div>
+                    <div class="item account">
+                        <div class="left-container">
+                            <img width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037088124368593037/unknown.png" alt="alt">
+                            <div class="account-text">
+                                <p class="name">Elon Musk <i class="material-icons" style="font-size:15px;">check_circle</i></p>
+                                <p class="nick-name">@elonmusk</p>
+                            </div>
+                        </div>
+                        <button class="secondary-button">Seguir</button>
+                    </div>
+                </div>
+                <div class="more-items">
+                    Mostrar más
+                </div>
+            </div>
+        </aside>
+    </div>
 </body>
 </html>

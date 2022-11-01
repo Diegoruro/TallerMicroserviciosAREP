@@ -1,14 +1,22 @@
+@import url('../../style.css');
+custom-header{
+    position:sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width:100%;
+}
 header{
+    z-index:100;
     display: flex;
-    background-color: white;
+    backdrop-filter: blur(5px);
     justify-content: space-between;
-    border: 1px solid white;
-    box-shadow: 0 0 5px white;
     align-items: center;
+    color: var(--blue);
+    border-bottom: 1px solid var(--third);
 }
 h1 {
     margin: 5px;
 }
-a {
+button {
     margin-right: 10px;
 }
