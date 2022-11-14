@@ -8,6 +8,10 @@ function login() {
     body.setAttribute('currentview', 'home');
 }
 
+function logout() {
+    // ESCRIBIR FUNCIÓN LOG OUT
+}
+
 function sendTweet() {
     let tweet = document.getElementById('tweet').value;
     let stream = document.getElementById('stream');
