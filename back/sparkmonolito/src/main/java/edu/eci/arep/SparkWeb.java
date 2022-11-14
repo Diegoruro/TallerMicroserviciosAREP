@@ -4,11 +4,15 @@ package edu.eci.arep;
 import com.google.gson.*;
 import edu.eci.arep.entity.Post;
 import edu.eci.arep.repository.MongoDbRepository;
+import edu.eci.arep.repository.MongoDbRepositoryUser;
 import edu.eci.arep.service.PostService;
+import edu.eci.arep.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.eclipse.jetty.http.HttpStatus;
+import spark.Response;
 
+import javax.json.Json;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +26,7 @@ public class SparkWeb {
     public static void main(String... args){
         MongoDbRepository mongoDbRepository = new MongoDbRepository();
         port(getPort());
+        //Post
         post("post", (req,res) -> {
             PostService postService = new PostService(mongoDbRepository);
             JsonObject json = JsonParser.parseString(req.body()).getAsJsonObject();
@@ -39,17 +44,23 @@ public class SparkWeb {
 
 
         //User
-        path("", () -> {
+        path("/user", () -> {
+            MongoDbRepositoryUser mongoDbRepositoryUser = new MongoDbRepositoryUser();
+            UserService userService =  new UserService(mongoDbRepositoryUser);
             post("/auth", (req, res) -> {
                 //verify if user exist
                 String SERVER_KEY = "password";
                 String jwt = Jwts.builder()
-                                .signWith(SignatureAlgorithm.ES256, SERVER_KEY)
+                                .signWith(SignatureAlgorithm.HS256, SERVER_KEY)
                                 .setSubject("admin").compact();
-                JsonObject json = new JsonObject();
-                json.addProperty("JWT",jwt);
+                javax.json.JsonObject json = Json.createObjectBuilder()
+                        .add("JWT",jwt).build();
+                res.type("application/json");
                 res.body("hi");
-                return "ok";
+                return json;
+            });
+            get("", (req, res) -> {
+                return userService.getAllUsers();
             });
         });
 
