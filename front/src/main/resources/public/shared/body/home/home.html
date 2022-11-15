@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./shared/body/home/style-home.css">
 </head>
 <body>
@@ -39,9 +40,52 @@
                 <i class="material-icons" style="font-size:24px;">settings</i>
                 Más opeciones
             </label>
-            <button class="main-button tweet">Twittear</button>
+            <button class="main-button tweet-text">Twittear</button>
         </nav>
-        <main>Hi</main>
+        <main>
+            <div class="form">
+                <div class="input">
+                    <img class="prof-img" width="50px" height="50px" src="https://pbs.twimg.com/profile_images/1509033228874694659/KjCCiVZI_400x400.jpg" alt="">
+                    <input id="tweet" class="tweet-input" placeholder="¿Qué esta pasando?" maxlength="140" type="text">
+                </div>
+                <div class="bottom-bar">
+                    <div class="icons-bar">
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">image</span>
+                        </div>
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">gif_box</span>
+                        </div>
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">format_list_bulleted</span>
+                        </div>
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">sentiment_satisfied</span>
+                        </div>
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">calendar_month</span>
+                        </div>
+                        <div class="icon-container">
+                            <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                        </div>
+                    </div>
+                    <button onclick="sendTweet()" class="main-button">Twittear</button>
+                </div>
+            </div>
+            <div id="stream" class="stream">
+                <article class="tweet">
+                    <img class="prof-img" width="50px" height="50px" src="https://pbs.twimg.com/profile_images/1509033228874694659/KjCCiVZI_400x400.jpg" alt="">
+                    <div class="tweet-content">
+                        <div class="tweet-user">
+                            <h3 class="tweet-name">Juan Rojas</h3><p class="tweet-nickname">@juanro</p>
+                        </div>
+                        <div class="tweet-msg">
+                            <p>Hola buenos días esto es una prueba del tweet</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
         <aside>
             <div class="search">
                 <i class="material-icons" style="font-size:24px;">search</i>
@@ -79,7 +123,7 @@
                 <div class="accounts-items">
                     <div class="item account">
                         <div class="left-container">
-                            <img width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037080711603167322/unknown.png" alt="alt">
+                            <img class="prof-img" width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037080711603167322/unknown.png" alt="alt">
                             <div class="account-text">
                                 <p class="name">Kevin De Bruyne <i class="material-icons" style="font-size:15px;">check_circle</i></p>
                                 <p class="nick-name">@KevinDeBruyne</p>
@@ -89,7 +133,7 @@
                     </div>
                     <div class="item account">
                         <div class="left-container">
-                            <img width="50px" height="50px" src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg" alt="alt">
+                            <img class="prof-img" width="50px" height="50px" src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg" alt="alt">
                             <div class="account-text">
                                 <p class="name">NASA <i class="material-icons" style="font-size:15px;">check_circle</i></p>
                                 <p class="nick-name">@NASA</p>
@@ -99,7 +143,7 @@
                     </div>
                     <div class="item account">
                         <div class="left-container">
-                            <img width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037088124368593037/unknown.png" alt="alt">
+                            <img class="prof-img" width="50px" height="50px" src="https://media.discordapp.net/attachments/584593411567517710/1037088124368593037/unknown.png" alt="alt">
                             <div class="account-text">
                                 <p class="name">Elon Musk <i class="material-icons" style="font-size:15px;">check_circle</i></p>
                                 <p class="nick-name">@elonmusk</p>

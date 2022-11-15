@@ -4,6 +4,8 @@ class custom_header extends HTMLElement{
     constructor(){
         super();
         this.isLoggin;
+        console.log('header')
+
     }
 
     static get observedAttributes() {

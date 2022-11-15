@@ -5,6 +5,7 @@ class custom_body extends HTMLElement{
     constructor(){
         super();
         this.currentview;
+        console.log('body')
     }
     
     static get observedAttributes() {

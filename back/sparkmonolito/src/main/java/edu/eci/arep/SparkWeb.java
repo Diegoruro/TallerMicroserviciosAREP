@@ -2,6 +2,15 @@ package edu.eci.arep;
 
 
 import com.google.gson.*;
+import com.nimbusds.jose.JWSAlgorithm;
+import com.nimbusds.jose.jwk.source.JWKSource;
+import com.nimbusds.jose.jwk.source.RemoteJWKSet;
+import com.nimbusds.jose.proc.JWSKeySelector;
+import com.nimbusds.jose.proc.JWSVerificationKeySelector;
+import com.nimbusds.jose.util.DefaultResourceRetriever;
+import com.nimbusds.jose.util.ResourceRetriever;
+import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
+import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 import edu.eci.arep.entity.Post;
 import edu.eci.arep.repository.MongoDbRepository;
 import edu.eci.arep.repository.MongoDbRepositoryUser;
@@ -13,14 +22,14 @@ import org.eclipse.jetty.http.HttpStatus;
 import spark.Response;
 
 import javax.json.Json;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import static spark.Spark.*;
 
 public class SparkWeb {
-
-
 
 
     public static void main(String... args){
@@ -72,4 +81,6 @@ public class SparkWeb {
         }
         return 4567;
     }
+
+
 }
