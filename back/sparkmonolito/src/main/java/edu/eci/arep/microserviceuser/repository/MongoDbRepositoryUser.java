@@ -3,7 +3,6 @@ package edu.eci.arep.microserviceuser.repository;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.*;
-import edu.eci.arep.entity.User;
 import org.bson.Document;
 
 import java.util.ArrayList;

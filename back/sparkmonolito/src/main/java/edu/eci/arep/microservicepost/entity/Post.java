@@ -1,4 +1,4 @@
-package edu.eci.arep.entity;
+package edu.eci.arep.microservicepost.entity;
 
 public class Post {
     private String text;

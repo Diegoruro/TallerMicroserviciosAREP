@@ -1,14 +1,13 @@
 package edu.eci.arep.microserviceuser.service;
 
-import edu.eci.arep.entity.User;
-import edu.eci.arep.repository.MongoDbRepositoryUser;
+import edu.eci.arep.microservicepost.repository.MongoDbRepositoryPost;
 
 import java.util.List;
 
 public class UserService {
-    private final MongoDbRepositoryUser mongoDbRepository;
+    private final MongoDbRepositoryPost mongoDbRepository;
 
-    public UserService(MongoDbRepositoryUser mongoDbRepositoryUser) {
+    public UserService(MongoDbRepositoryPost mongoDbRepositoryUser) {
         this.mongoDbRepository = mongoDbRepositoryUser;
         this.mongoDbRepository.createConnection("userdb","users");
     }
