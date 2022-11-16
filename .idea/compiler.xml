@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TallerMicroserviciosAREP" target="1.8" />
-      <module name="TallerMicroserviciosAREP (1)" target="1.8" />
+      <module name="TallerMicroserviciosAREP" target="8" />
+      <module name="TallerMicroserviciosAREP (1)" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

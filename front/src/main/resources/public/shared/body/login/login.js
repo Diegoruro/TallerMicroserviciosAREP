@@ -18,7 +18,6 @@ class Login {
     }
 
     init() {
-        console.log('module pattern working correctly :)');
         this.setElements();
         this.addEventListeners();
     }
