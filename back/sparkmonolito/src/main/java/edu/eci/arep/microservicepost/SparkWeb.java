@@ -18,9 +18,7 @@ public class SparkWeb {
         post("/post", (req,res) -> {
             PostService postService = new PostService(mongoDbRepository);
             JsonObject json = JsonParser.parseString(req.body()).getAsJsonObject();
-            System.out.println(json);
             Post post = new Post(json.get("text").toString(),json.get("userName").toString(),json.get("date").toString());
-            System.out.println(post.toString());
             postService.addPost(post);
             return post;
         });
