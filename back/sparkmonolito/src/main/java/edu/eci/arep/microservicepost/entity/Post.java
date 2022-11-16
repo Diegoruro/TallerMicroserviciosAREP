@@ -38,9 +38,9 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                ", text='" + text + '\'' +
-                ", userName='" + userName + '\'' +
-                ", date='" + date + '\'' +
+                ", text=" + text +
+                ", userName=" + userName +
+                ", date=" + date +
                 '}';
     }
 }

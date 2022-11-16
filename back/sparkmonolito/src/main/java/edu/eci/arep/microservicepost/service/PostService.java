@@ -1,8 +1,10 @@
 package edu.eci.arep.microservicepost.service;
 
+import com.google.gson.JsonObject;
 import edu.eci.arep.microservicepost.entity.Post;
 import edu.eci.arep.microservicepost.repository.MongoDbRepositoryPost;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostService{
@@ -19,7 +21,7 @@ public class PostService{
         mongoDbRepository.addPost(post);
     }
 
-    public List<Post> getAllPost(){
+    public List<String> getAllPost(){
         return mongoDbRepository.getAllDocuments();
     }
 }
