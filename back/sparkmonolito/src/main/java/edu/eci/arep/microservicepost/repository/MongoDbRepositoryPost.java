@@ -1,11 +1,14 @@
 package edu.eci.arep.microservicepost.repository;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.*;
 import edu.eci.arep.microservicepost.entity.Post;
 import org.bson.Document;
 
+import javax.json.Json;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
@@ -41,14 +44,14 @@ public class MongoDbRepositoryPost {
 
     }
 
-    public ArrayList<Post> getAllDocuments() {
-        ArrayList<Post> posts = new ArrayList<>();
+    public ArrayList<String> getAllDocuments() {
+        ArrayList<String> posts = new ArrayList<>();
 
         FindIterable<Document> result = this.mongoCollection.find();
-        System.out.println(result);
         result.forEach((Consumer<? super Document>) document -> {
-            Post post = new Post(document.getString("text"),document.getString("userName"),document.getString("date"));
-            posts.add(post);
+            String json = "{ \"text\":" + document.getString("text") + ",\"userName\":" + document.getString("userName") + ",\"date\":" + document.getString("date") + "}";
+            System.out.println(json);
+            posts.add(json);
         });
         return posts;
     }

@@ -15,18 +15,18 @@ public class SparkWeb {
         MongoDbRepositoryPost mongoDbRepository = new MongoDbRepositoryPost();
         port(getPort());
         //Post
-        post("post", (req,res) -> {
+        post("/post", (req,res) -> {
             PostService postService = new PostService(mongoDbRepository);
             JsonObject json = JsonParser.parseString(req.body()).getAsJsonObject();
+            System.out.println(json);
             Post post = new Post(json.get("text").toString(),json.get("userName").toString(),json.get("date").toString());
-
+            System.out.println(post.toString());
             postService.addPost(post);
             return post;
         });
-        get("posts", (req,res)->{
+        get("/posts", (req,res)->{
             PostService postService = new PostService(mongoDbRepository);
-
-
+            res.type("application/json");
             return postService.getAllPost();
         });
 
