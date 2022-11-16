@@ -1,20 +1,16 @@
-package edu.eci.arep.repository;
+package edu.eci.arep.microservicepost.repository;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import edu.eci.arep.entity.User;
+import com.mongodb.client.*;
+import edu.eci.arep.microservicepost.entity.Post;
 import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
 
-public class MongoDbRepositoryUser {
+public class MongoDbRepositoryPost {
 
     private MongoClient mongoClient = null;
     private MongoDatabase mongoDatabase = null;
@@ -35,15 +31,26 @@ public class MongoDbRepositoryUser {
         this.mongoClient.close();
     }
 
+    public void addPost(Post post){
+        Document document = new Document();
+        document.put("text",post.getText());
+        document.put("date",post.getDate());
+        document.put("userName",post.getUserName());
 
-    public ArrayList<User> getAllUsers() {
-        ArrayList<User> users = new ArrayList<>();
+        this.mongoCollection.insertOne(document);
+
+    }
+
+    public ArrayList<Post> getAllDocuments() {
+        ArrayList<Post> posts = new ArrayList<>();
+
         FindIterable<Document> result = this.mongoCollection.find();
         System.out.println(result);
         result.forEach((Consumer<? super Document>) document -> {
-            User user = new User(document.getString("username"),document.getString("password"));
-            users.add(user);
+            Post post = new Post(document.getString("text"),document.getString("userName"),document.getString("date"));
+            posts.add(post);
         });
-        return users;
+        return posts;
     }
+
 }

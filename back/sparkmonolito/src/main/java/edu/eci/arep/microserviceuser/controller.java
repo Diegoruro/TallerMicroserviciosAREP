@@ -1,17 +1,8 @@
 package edu.eci.arep.microserviceuser;
 
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import edu.eci.arep.entity.Post;
-import edu.eci.arep.repository.MongoDbRepository;
-import edu.eci.arep.repository.MongoDbRepositoryUser;
-import edu.eci.arep.service.PostService;
-import edu.eci.arep.service.UserService;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-
-import javax.json.Json;
+import edu.eci.arep.microserviceuser.service.UserService;
+import edu.eci.arep.microservicepost.repository.MongoDbRepositoryPost;
 
 import static spark.Spark.*;
 
@@ -24,7 +15,7 @@ public class controller {
 
         //User
         path("/user", () -> {
-            MongoDbRepositoryUser mongoDbRepositoryUser = new MongoDbRepositoryUser();
+            MongoDbRepositoryPost mongoDbRepositoryUser = new MongoDbRepositoryPost();
             UserService userService =  new UserService(mongoDbRepositoryUser);
             post("/auth", (req, res) -> {
                 //verify if user exist

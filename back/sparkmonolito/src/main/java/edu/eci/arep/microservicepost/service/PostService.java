@@ -1,15 +1,15 @@
-package edu.eci.arep.service;
+package edu.eci.arep.microservicepost.service;
 
-import edu.eci.arep.entity.Post;
-import edu.eci.arep.repository.MongoDbRepository;
+import edu.eci.arep.microservicepost.entity.Post;
+import edu.eci.arep.microservicepost.repository.MongoDbRepositoryPost;
 
 import java.util.List;
 
 public class PostService{
 
-    private final MongoDbRepository mongoDbRepository;
+    private final MongoDbRepositoryPost mongoDbRepository;
 
-    public PostService(MongoDbRepository mongoDbRepository) {
+    public PostService(MongoDbRepositoryPost mongoDbRepository) {
         this.mongoDbRepository = mongoDbRepository;
         this.mongoDbRepository.createConnection("postdb","posts");
     }
