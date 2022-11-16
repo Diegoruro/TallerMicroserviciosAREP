@@ -1,6 +1,7 @@
 package edu.eci.arep.microserviceuser;
 
 
+import edu.eci.arep.microserviceuser.repository.MongoDbRepositoryUser;
 import edu.eci.arep.microserviceuser.service.UserService;
 import edu.eci.arep.microservicepost.repository.MongoDbRepositoryPost;
 
@@ -10,12 +11,11 @@ public class controller {
 
 
     public static void main(String... args){
-        MongoDbRepository mongoDbRepository = new MongoDbRepository();
+        MongoDbRepositoryUser mongoDbRepositoryUser = new MongoDbRepositoryUser();
         port(getPort());
 
         //User
         path("/user", () -> {
-            MongoDbRepositoryPost mongoDbRepositoryUser = new MongoDbRepositoryPost();
             UserService userService =  new UserService(mongoDbRepositoryUser);
             post("/auth", (req, res) -> {
                 //verify if user exist
